@@ -11,6 +11,22 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     
     <title>Sign Up</title>
+    <!-- <script defer src="/__/firebase/8.3.3/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <!-- <script defer src="/__/firebase/8.3.3/firebase-auth.js"></script>
+    <script defer src="/__/firebase/8.3.3/firebase-database.js"></script>
+    <script defer src="/__/firebase/8.3.3/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/8.3.3/firebase-functions.js"></script>
+    <script defer src="/__/firebase/8.3.3/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/8.3.3/firebase-storage.js"></script>
+    <script defer src="/__/firebase/8.3.3/firebase-analytics.js"></script>
+    <script defer src="/__/firebase/8.3.3/firebase-remote-config.js"></script>
+    <script defer src="/__/firebase/8.3.3/firebase-performance.js"></script> -->
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <!-- <script defer src="/__/firebase/init.js?useEmulator=true"></script> --> -->
 </head>
 <body style="background-color: #F0F0F0;">
     <div class="container">
@@ -21,34 +37,34 @@
     <div class="card primecolor text-center card-form">
         <div class="card-body">
             <h2 style="text-align:center;" class="text-primary">Sign Up</h2>
-            <form action="/signteachers" method="POST">
+            <form>
                 <div style="text-align: left;">Name</div>
-                <input name="Name" type="text" class="form-control form-group form-control-lg"  >  
+                <input id="name" type="text" class="form-control form-group form-control-lg"  >  
                 <div style="text-align: left;">Username</div>
-                <input name="username" type="text" class="form-control form-group form-control-lg"  >  
+                <input id="username" type="text" class="form-control form-group form-control-lg"  >  
                 <div style="text-align: left;">Email</div>
-                <input name="email" type="email"   class="form-control form-group form-control-lg"   >
+                <input id="email" type="email"   class="form-control form-group form-control-lg"   >
                 <div style="text-align: left;">Your Mobile Number</div>
-                <input name="phoneno" type="number" length="10"  class="form-control form-group form-control-lg" >  
+                <input id="phoneno" type="number" length="10"  class="form-control form-group form-control-lg" >  
         <div style="text-align: left;">Password</div>
-         <input name="passwd" type="password"  class="form-control form-group form-control-lg" > 
+         <input id="password" type="password"  class="form-control form-group form-control-lg" > 
          <div style="text-align: left;">Your Gender</div>
-         <select name="gender" class="form-control form-group form-control-lg">
+         <select id="gender" class="form-control form-group form-control-lg">
             <option value="male">Male</option>
             <option value="female">Female</option>
             <option value="others">Others</option>
         </select>
         <div style="text-align: left;" >DOB</div>
-        <input type="date" name="dob"  class="form-control form-group form-control-lg">
+        <input type="date" id="dob"  class="form-control form-group form-control-lg">
         <div style="text-align: left;">Your Profile Pic</div>
-        <input type="file" class="form-control form-group form-control-lg">
+        <input type="file" id="img" class="form-control form-group form-control-lg">
         <br>
          <br> 
-         <input type="submit" class="btn bg-primary text-light btn-block">
+         <button type="submit" id="add-data" class="btn bg-primary text-light btn-block">submit</button>
                 <br>
                 <div class="text-muted">------------------------------------</div>
                 <div style="font-size: small;">
-                Already Have an Account? <a href="loginpgteachers">LogIn</a>
+                Already Have an Account? <a href="login.html">LogIn</a>
         </div>
             </form>
         </div>
@@ -58,6 +74,30 @@
     </div>
     
 </div>
+<script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
 
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-database.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyD64ikwW9BWkccoE4zsYj0XU4PeFlA155E",
+    authDomain: "face-pay-1415f.firebaseapp.com",
+    databaseURL: "https://face-pay-1415f-default-rtdb.firebaseio.com",
+    projectId: "face-pay-1415f",
+    storageBucket: "face-pay-1415f.appspot.com",
+    messagingSenderId: "705921085380",
+    appId: "1:705921085380:web:48baad239224dd3f397e91",
+    measurementId: "G-RQ6NL9JLET"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+<script src="app.js"></script>
 </body>
 </html>
